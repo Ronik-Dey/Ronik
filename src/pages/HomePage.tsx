@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 // Update the TourCategory component in HomePage.tsx
 const TourCategory = ({ icon, title, count }) => {
   return (
