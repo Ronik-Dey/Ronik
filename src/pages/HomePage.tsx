@@ -13,3 +13,5 @@ const TourCategory = ({ icon, title, count }) => {
     </Link>
   );
 };
+
+export default TourCategory
