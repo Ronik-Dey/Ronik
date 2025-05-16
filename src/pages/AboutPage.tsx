@@ -36,7 +36,7 @@ const AboutPage = () => {
               <h3 className="text-2xl font-bold text-gray-800 mb-4">From Passion to Profession</h3>
               <p className="text-gray-600 mb-4">
                 Wanderlust began with a simple idea: to create travel experiences we'd want to take ourselves. 
-                Our founder, Sarah Chen, was frustrated with the cookie-cutter tours available on the market 
+                Our founder, Ronik Dey, was frustrated with the cookie-cutter tours available on the market 
                 and decided to create something different.
               </p>
               <p className="text-gray-600 mb-4">
