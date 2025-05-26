@@ -86,6 +86,382 @@ export const destinations: Destination[] = [
     ]
   },
   {
+    id: "kerala-backwaters",
+    name: "Kerala Backwaters & Beaches",
+    country: "India",
+    continent: "Asia",
+    description: "Experience the serene backwaters and pristine beaches of God's Own Country.",
+    longDescription: "Discover the tropical paradise of Kerala on this enchanting tour. Cruise through the tranquil backwaters on a traditional houseboat, explore spice plantations, witness traditional Kathakali performances, and relax on pristine beaches. Experience the unique culture, cuisine, and natural beauty of this southern Indian gem.",
+    image: "https://images.pexels.com/photos/1483053/pexels-photo-1483053.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    gallery: [
+      "https://images.pexels.com/photos/2166559/pexels-photo-2166559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/1483024/pexels-photo-1483024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/2161449/pexels-photo-2161449.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    ],
+    price: 1499,
+    duration: 8,
+    rating: 4.9,
+    reviews: 178,
+    featured: true,
+    popular: true,
+    activities: ["Houseboat Cruise", "Ayurvedic Spa", "Cultural Shows", "Beach Activities", "Spice Plantation Tours"],
+    inclusions: ["7 nights accommodation", "Daily breakfast", "Houseboat stay", "Cultural performances", "Spice plantation visit", "Airport transfers"],
+    exclusions: ["Flights", "Travel insurance", "Personal expenses", "Optional activities"],
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival in Kochi",
+        description: "Welcome to Kerala! Transfer to your hotel and evening Chinese fishing nets sunset view."
+      },
+      {
+        day: 2,
+        title: "Kochi Heritage Tour",
+        description: "Explore Fort Kochi, Dutch Palace, Jewish Synagogue, and evening Kathakali performance."
+      },
+      {
+        day: 3,
+        title: "Munnar Hill Station",
+        description: "Drive to Munnar through scenic hills. Visit tea plantations and spice gardens."
+      },
+      {
+        day: 4,
+        title: "Thekkady Wildlife",
+        description: "Travel to Thekkady, boat ride in Periyar Lake, spice plantation tour."
+      },
+      {
+        day: 5,
+        title: "Alleppey Backwaters",
+        description: "Board your private houseboat for an overnight cruise through the backwaters."
+      },
+      {
+        day: 6,
+        title: "Kovalam Beach",
+        description: "Drive to Kovalam. Afternoon at leisure on the beach."
+      },
+      {
+        day: 7,
+        title: "Kovalam Relaxation",
+        description: "Full day to relax, enjoy Ayurvedic spa treatments, and beach activities."
+      },
+      {
+        day: 8,
+        title: "Departure",
+        description: "Transfer to Trivandrum airport for your departure flight."
+      }
+    ]
+  },
+  {
+    id: "kashmir-paradise",
+    name: "Kashmir Paradise Tour",
+    country: "India",
+    continent: "Asia",
+    description: "Experience the heaven on earth with stunning landscapes and rich culture.",
+    longDescription: "Discover the breathtaking beauty of Kashmir, often called 'Paradise on Earth'. Stay in luxurious houseboats on Dal Lake, explore the Mughal Gardens, take a shikara ride at sunset, and visit the stunning valleys of Gulmarg and Pahalgam. Experience the unique blend of natural beauty and cultural heritage in this northernmost region of India.",
+    image: "https://images.pexels.com/photos/9407734/pexels-photo-9407734.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    gallery: [
+      "https://images.pexels.com/photos/6602042/pexels-photo-6602042.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/6602032/pexels-photo-6602032.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/6602034/pexels-photo-6602034.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/6602037/pexels-photo-6602037.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    ],
+    price: 1799,
+    duration: 7,
+    rating: 4.8,
+    reviews: 156,
+    featured: true,
+    popular: true,
+    activities: ["Shikara Rides", "Gondola Rides", "Garden Visits", "Shopping", "Cultural Experiences"],
+    inclusions: ["6 nights accommodation", "Daily breakfast", "Houseboat stay", "All transfers", "Sightseeing tours", "English-speaking guide"],
+    exclusions: ["Flights", "Travel insurance", "Personal expenses", "Optional activities"],
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival in Srinagar",
+        description: "Welcome to Kashmir! Transfer to your houseboat on Dal Lake. Evening shikara ride."
+      },
+      {
+        day: 2,
+        title: "Srinagar City Tour",
+        description: "Visit Mughal Gardens, Shankaracharya Temple, and local markets."
+      },
+      {
+        day: 3,
+        title: "Gulmarg Excursion",
+        description: "Full day trip to Gulmarg. Enjoy gondola ride and stunning views."
+      },
+      {
+        day: 4,
+        title: "Pahalgam Valley",
+        description: "Drive to Pahalgam. Visit Betaab Valley and Chandanwari."
+      },
+      {
+        day: 5,
+        title: "Pahalgam Exploration",
+        description: "Day at leisure to explore Pahalgam or optional activities."
+      },
+      {
+        day: 6,
+        title: "Return to Srinagar",
+        description: "Drive back to Srinagar. Evening local market visit."
+      },
+      {
+        day: 7,
+        title: "Departure",
+        description: "Transfer to Srinagar airport for departure."
+      }
+    ]
+  },
+  {
+    id: "ladakh-adventure",
+    name: "Ladakh Himalayan Explorer",
+    country: "India",
+    continent: "Asia",
+    description: "Journey through the land of high passes and Buddhist monasteries.",
+    longDescription: "Embark on an adventure through the stunning landscapes of Ladakh. Visit ancient Buddhist monasteries, cross high mountain passes, explore traditional villages, and witness the unique culture of this high-altitude desert. Experience the warmth of Ladakhi hospitality and the breathtaking beauty of the Himalayas.",
+    image: "https://images.pexels.com/photos/6602156/pexels-photo-6602156.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    gallery: [
+      "https://images.pexels.com/photos/6602163/pexels-photo-6602163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/6602164/pexels-photo-6602164.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/6602165/pexels-photo-6602165.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/6602166/pexels-photo-6602166.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    ],
+    price: 2199,
+    duration: 9,
+    rating: 4.7,
+    reviews: 134,
+    featured: false,
+    popular: true,
+    activities: ["Monastery Visits", "Mountain Passes", "Village Walks", "Camel Safari", "Photography"],
+    inclusions: ["8 nights accommodation", "All meals", "Oxygen cylinders", "Transport", "Guide", "Permits"],
+    exclusions: ["Flights", "Travel insurance", "Personal expenses", "Optional activities"],
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival in Leh",
+        description: "Arrive in Leh. Rest day for acclimatization."
+      },
+      {
+        day: 2,
+        title: "Leh Local Sightseeing",
+        description: "Visit Leh Palace, Shanti Stupa, and local market."
+      },
+      {
+        day: 3,
+        title: "Monastery Tour",
+        description: "Visit Thiksey, Hemis, and Shey monasteries."
+      },
+      {
+        day: 4,
+        title: "Pangong Lake",
+        description: "Drive to Pangong Lake via Changla Pass."
+      },
+      {
+        day: 5,
+        title: "Nubra Valley",
+        description: "Travel to Nubra Valley via Khardung La Pass."
+      },
+      {
+        day: 6,
+        title: "Nubra Exploration",
+        description: "Visit Diskit Monastery and Hunder Sand Dunes."
+      },
+      {
+        day: 7,
+        title: "Return to Leh",
+        description: "Drive back to Leh. Evening at leisure."
+      },
+      {
+        day: 8,
+        title: "Alchi and Lamayuru",
+        description: "Day trip to ancient monasteries of Alchi and Lamayuru."
+      },
+      {
+        day: 9,
+        title: "Departure",
+        description: "Transfer to Leh airport for departure."
+      }
+    ]
+  },
+  {
+    id: "uttarakhand-spiritual",
+    name: "Uttarakhand Spiritual Journey",
+    country: "India",
+    continent: "Asia",
+    description: "Explore the spiritual heart of India in the Himalayan foothills.",
+    longDescription: "Journey through the sacred land of Uttarakhand, where spirituality meets natural beauty. Visit holy cities like Rishikesh and Haridwar, witness the evening Ganga Aarti, practice yoga and meditation, and explore the stunning landscapes of the Himalayan foothills. Experience the perfect blend of adventure and spirituality.",
+    image: "https://images.pexels.com/photos/6602175/pexels-photo-6602175.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    gallery: [
+      "https://images.pexels.com/photos/6602176/pexels-photo-6602176.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/6602177/pexels-photo-6602177.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/6602178/pexels-photo-6602178.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/6602179/pexels-photo-6602179.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    ],
+    price: 1299,
+    duration: 8,
+    rating: 4.6,
+    reviews: 167,
+    featured: false,
+    popular: false,
+    activities: ["Yoga Sessions", "Temple Visits", "River Rafting", "Nature Walks", "Meditation"],
+    inclusions: ["7 nights accommodation", "Daily breakfast", "Yoga classes", "Transport", "Guide", "Activities"],
+    exclusions: ["Flights", "Travel insurance", "Personal expenses", "Optional activities"],
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival in Dehradun",
+        description: "Welcome to Uttarakhand! Transfer to Rishikesh."
+      },
+      {
+        day: 2,
+        title: "Rishikesh Exploration",
+        description: "Morning yoga, visit Beatles Ashram, evening Ganga Aarti."
+      },
+      {
+        day: 3,
+        title: "Adventure Day",
+        description: "White water rafting and cliff jumping."
+      },
+      {
+        day: 4,
+        title: "Haridwar",
+        description: "Visit temples and witness evening Ganga Aarti."
+      },
+      {
+        day: 5,
+        title: "Mussoorie",
+        description: "Drive to Mussoorie. Visit Kempty Falls and Mall Road."
+      },
+      {
+        day: 6,
+        title: "Dhanaulti",
+        description: "Day trip to Dhanaulti. Nature walks and eco park visit."
+      },
+      {
+        day: 7,
+        title: "Spiritual Activities",
+        description: "Meditation sessions and spiritual discussions."
+      },
+      {
+        day: 8,
+        title: "Departure",
+        description: "Transfer to Dehradun airport for departure."
+      }
+    ]
+  },
+  {
+    id: "assam-wildlife",
+    name: "Assam Wildlife Safari",
+    country: "India",
+    continent: "Asia",
+    description: "Discover the rich wildlife and tea culture of Northeast India.",
+    longDescription: "Explore the wilderness of Assam, home to the one-horned rhinoceros and diverse wildlife. Visit Kaziranga National Park, experience tea plantation life, cruise on the mighty Brahmaputra River, and immerse yourself in the unique culture of Northeast India. Perfect for wildlife enthusiasts and nature lovers.",
+    image: "https://images.pexels.com/photos/6602180/pexels-photo-6602180.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    gallery: [
+      "https://images.pexels.com/photos/6602181/pexels-photo-6602181.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/6602182/pexels-photo-6602182.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/6602183/pexels-photo-6602183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/6602184/pexels-photo-6602184.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    ],
+    price: 1699,
+    duration: 7,
+    rating: 4.7,
+    reviews: 123,
+    featured: false,
+    popular: false,
+    activities: ["Wildlife Safari", "Tea Tasting", "River Cruise", "Cultural Shows", "Bird Watching"],
+    inclusions: ["6 nights accommodation", "All meals", "Safari rides", "Transport", "Guide", "Activities"],
+    exclusions: ["Flights", "Travel insurance", "Personal expenses", "Optional activities"],
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival in Guwahati",
+        description: "Welcome to Assam! Transfer to Kaziranga."
+      },
+      {
+        day: 2,
+        title: "Kaziranga Safari",
+        description: "Morning and afternoon safari in Kaziranga National Park."
+      },
+      {
+        day: 3,
+        title: "Tea Experience",
+        description: "Visit tea gardens and learn about tea production."
+      },
+      {
+        day: 4,
+        title: "River Island",
+        description: "Visit Majuli, world's largest river island."
+      },
+      {
+        day: 5,
+        title: "Sibsagar",
+        description: "Explore Ahom kingdom temples and monuments."
+      },
+      {
+        day: 6,
+        title: "Guwahati",
+        description: "Visit Kamakhya Temple and river cruise."
+      },
+      {
+        day: 7,
+        title: "Departure",
+        description: "Transfer to Guwahati airport for departure."
+      }
+    ]
+  },
+  {
+    id: "kanyakumari-tour",
+    name: "Kanyakumari Coastal Explorer",
+    country: "India",
+    continent: "Asia",
+    description: "Experience the southernmost tip of mainland India.",
+    longDescription: "Journey to Kanyakumari, where three oceans meet. Watch spectacular sunrises and sunsets, visit the Vivekananda Rock Memorial, explore ancient temples, and experience the unique culture of Tamil Nadu. This tour combines spiritual significance with natural beauty.",
+    image: "https://images.pexels.com/photos/6602185/pexels-photo-6602185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    gallery: [
+      "https://images.pexels.com/photos/6602186/pexels-photo-6602186.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/6602187/pexels-photo-6602187.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/6602188/pexels-photo-6602188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/6602189/pexels-photo-6602189.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    ],
+    price: 999,
+    duration: 5,
+    rating: 4.5,
+    reviews: 98,
+    featured: false,
+    popular: false,
+    activities: ["Sunrise Viewing", "Temple Visits", "Beach Activities", "Boat Rides", "Shopping"],
+    inclusions: ["4 nights accommodation", "Daily breakfast", "Transport", "Guide", "Activities"],
+    exclusions: ["Flights", "Travel insurance", "Personal expenses", "Optional activities"],
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival",
+        description: "Arrive in Kanyakumari. Evening sunset view."
+      },
+      {
+        day: 2,
+        title: "Memorial Visit",
+        description: "Visit Vivekananda Rock Memorial and Thiruvalluvar Statue."
+      },
+      {
+        day: 3,
+        title: "Temple Tour",
+        description: "Explore ancient temples and local markets."
+      },
+      {
+        day: 4,
+        title: "Coastal Experience",
+        description: "Beach activities and coastal village visit."
+      },
+      {
+        day: 5,
+        title: "Departure",
+        description: "Morning sunrise view before departure."
+      }
+    ]
+  },
+  {
     id: "darjeeling-sikkim",
     name: "Darjeeling & Sikkim Adventure",
     country: "India",
@@ -499,92 +875,6 @@ export const destinations: Destination[] = [
         day: 7,
         title: "Departure",
         description: "Morning at leisure before seaplane transfer to Male for departure."
-      }
-    ]
-  },
-  {
-    id: "new-zealand-adventure",
-    name: "New Zealand Adventure",
-    country: "New Zealand",
-    continent: "Oceania",
-    description: "Experience the stunning landscapes and adventure activities of New Zealand.",
-    longDescription: "Embark on an epic journey through New Zealand's most spectacular landscapes. From the geothermal wonders of Rotorua to the majestic peaks of Queenstown, experience the best of both islands. Enjoy adventure activities, witness Maori culture, explore filming locations from The Lord of the Rings, and discover the natural beauty that makes New Zealand truly special.",
-    image: "https://images.pexels.com/photos/724963/pexels-photo-724963.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    gallery: [
-      "https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      "https://images.pexels.com/photos/4254555/pexels-photo-4254555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      "https://images.pexels.com/photos/4254553/pexels-photo-4254553.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      "https://images.pexels.com/photos/5208347/pexels-photo-5208347.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-    ],
-    price: 4499,
-    duration: 12,
-    rating: 4.8,
-    reviews: 156,
-    featured: true,
-    popular: false,
-    activities: ["Hiking", "Bungee Jumping", "Cultural Shows", "Wine Tasting", "Scenic Flights"],
-    inclusions: ["11 nights accommodation", "Daily breakfast", "Transportation", "Activities mentioned", "Local guides"],
-    exclusions: ["International flights", "Travel insurance", "Personal expenses", "Optional activities"],
-    itinerary: [
-      {
-        day: 1,
-        title: "Arrival in Auckland",
-        description: "Welcome to New Zealand! Transfer to hotel and city orientation tour."
-      },
-      {
-        day: 2,
-        title: "Rotorua",
-        description: "Travel to Rotorua. Visit Te Puia geothermal valley and Maori cultural performance."
-      },
-      {
-        day: 3,
-        title: "Hobbiton",
-        description: "Visit the Hobbiton Movie Set. Afternoon farm experience."
-      },
-      {
-        day: 4,
-        title: "Wellington",
-        description: "Fly to Wellington. Visit Te Papa Museum and Weta Workshop."
-      },
-      {
-        day: 5,
-        title: "South Island",
-        description: "Ferry to South Island. Explore Marlborough wine region."
-      },
-      {
-        day: 6,
-        title: "Kaikoura",
-        description: "Whale watching tour. Optional swimming with dolphins."
-      },
-      {
-        day: 7,
-        title: "Mount Cook",
-        description: "Journey to Mount Cook National Park. Glacier view walk."
-      },
-      {
-        day: 8,
-        title: "Queenstown",
-        description: "Travel to Queenstown. Evening gondola ride and dinner."
-      },
-      {
-        day: 9,
-        title: "Milford Sound",
-        description: "Day trip to Milford Sound including cruise."
-      },
-      {
-        day: 10,
-        title: "Adventure Day",
-        description: "Choose from various adventure activities in Queenstown."
-      },
-      {
-        day: 11,
-        title: "Franz Josef",
-        description: "Visit Franz Josef Glacier. Optional helicopter tour."
-      },
-      {
-        day: 12,
-        title: "Departure",
-        description: "Transfer to Christchurch for departure flight."
       }
     ]
   },
