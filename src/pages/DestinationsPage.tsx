@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { MapPin, Calendar, Star, Filter, Search, X } from 'lucide-react';
-import { destinations } from '../data/destinations';
+import { destinations, getCategories } from '../data/destinations';
 
 const DestinationsPage = () => {
+  const [searchParams] = useSearchParams();
+  const categoryFromUrl = searchParams.get('category');
+  
   const [filteredDestinations, setFilteredDestinations] = useState(destinations);
   const [filters, setFilters] = useState({
     continent: '',
@@ -12,14 +15,14 @@ const DestinationsPage = () => {
     priceRange: '',
     rating: '',
     search: '',
+    category: categoryFromUrl || ''
   });
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
-  // Get unique values for filter options
   const continents = [...new Set(destinations.map(dest => dest.continent))];
   const countries = [...new Set(destinations.map(dest => dest.country))];
+  const categories = getCategories();
   
-  // Price ranges
   const priceRanges = [
     { label: 'Under $1000', value: '0-1000' },
     { label: '$1000 - $2000', value: '1000-2000' },
@@ -27,7 +30,6 @@ const DestinationsPage = () => {
     { label: 'Over $3000', value: '3000-99999' },
   ];
   
-  // Duration ranges
   const durationRanges = [
     { label: '1-5 days', value: '1-5' },
     { label: '6-10 days', value: '6-10' },
@@ -35,7 +37,6 @@ const DestinationsPage = () => {
     { label: 'Over 15 days', value: '16-99' },
   ];
 
-  // Apply filters
   useEffect(() => {
     let results = destinations;
     
@@ -45,7 +46,14 @@ const DestinationsPage = () => {
         dest => 
           dest.name.toLowerCase().includes(searchTerm) || 
           dest.country.toLowerCase().includes(searchTerm) ||
-          dest.description.toLowerCase().includes(searchTerm)
+          dest.description.toLowerCase().includes(searchTerm) ||
+          dest.categories.some(cat => cat.toLowerCase().includes(searchTerm))
+      );
+    }
+    
+    if (filters.category) {
+      results = results.filter(dest => 
+        dest.categories.includes(filters.category)
       );
     }
     
@@ -90,6 +98,7 @@ const DestinationsPage = () => {
       priceRange: '',
       rating: '',
       search: '',
+      category: ''
     });
   };
 
@@ -105,7 +114,6 @@ const DestinationsPage = () => {
           <p className="text-gray-600">Discover tours and travel experiences around the world</p>
         </div>
         
-        {/* Search and Filter Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between mb-8 gap-4">
           <div className="relative w-full md:w-auto md:flex-grow">
             <Search size={20} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
@@ -128,7 +136,6 @@ const DestinationsPage = () => {
           </button>
         </div>
         
-        {/* Filters Panel */}
         <div className={`bg-white p-6 rounded-lg shadow-md mb-8 transition-all duration-300 ${isFilterOpen ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
           <div className="flex justify-between items-center mb-4">
             <h3 className="text-lg font-semibold">Filter Options</h3>
@@ -138,7 +145,25 @@ const DestinationsPage = () => {
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {/* Continent Filter */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Category
+              </label>
+              <select
+                name="category"
+                value={filters.category}
+                onChange={handleFilterChange}
+                className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="">All Categories</option>
+                {categories.map((category) => (
+                  <option key={category} value={category}>
+                    {category}
+                  </option>
+                ))}
+              </select>
+            </div>
+
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Continent
@@ -158,7 +183,6 @@ const DestinationsPage = () => {
               </select>
             </div>
             
-            {/* Country Filter */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Country
@@ -178,7 +202,6 @@ const DestinationsPage = () => {
               </select>
             </div>
             
-            {/* Duration Filter */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Duration
@@ -198,7 +221,6 @@ const DestinationsPage = () => {
               </select>
             </div>
             
-            {/* Price Range Filter */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Price Range
@@ -218,7 +240,6 @@ const DestinationsPage = () => {
               </select>
             </div>
             
-            {/* Rating Filter */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Minimum Rating
@@ -237,7 +258,6 @@ const DestinationsPage = () => {
             </div>
           </div>
           
-          {/* Active Filters */}
           <div className="mt-6 flex flex-wrap gap-2">
             {Object.entries(filters).map(([key, value]) => {
               if (!value) return null;
@@ -265,6 +285,9 @@ const DestinationsPage = () => {
                 case 'search':
                   label = `"${value}"`;
                   break;
+                case 'category':
+                  label = value;
+                  break;
                 default:
                   return null;
               }
@@ -287,14 +310,12 @@ const DestinationsPage = () => {
           </div>
         </div>
         
-        {/* Results Count */}
         <div className="mb-6">
           <p className="text-gray-600">
             {filteredDestinations.length} {filteredDestinations.length === 1 ? 'destination' : 'destinations'} found
           </p>
         </div>
         
-        {/* Destinations Grid */}
         {filteredDestinations.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredDestinations.map((destination) => (
