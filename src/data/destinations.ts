@@ -21,6 +21,7 @@ export interface Destination {
     title: string;
     description: string;
   }[];
+  categories: string[];
 }
 
 export const destinations: Destination[] = [
@@ -83,7 +84,8 @@ export const destinations: Destination[] = [
         title: "Departure",
         description: "Transfer to Delhi International Airport for your departure flight. End of our services."
       }
-    ]
+    ],
+    categories: ["Cultural", "Heritage"]
   },
   {
     id: "kerala-backwaters",
@@ -149,7 +151,8 @@ export const destinations: Destination[] = [
         title: "Departure",
         description: "Transfer to Trivandrum airport for your departure flight."
       }
-    ]
+    ],
+    categories: ["Beach", "Cultural", "Honeymoon"]
   },
   {
     id: "kashmir-paradise",
@@ -158,12 +161,12 @@ export const destinations: Destination[] = [
     continent: "Asia",
     description: "Experience the heaven on earth with stunning landscapes and rich culture.",
     longDescription: "Discover the breathtaking beauty of Kashmir, often called 'Paradise on Earth'. Stay in luxurious houseboats on Dal Lake, explore the Mughal Gardens, take a shikara ride at sunset, and visit the stunning valleys of Gulmarg and Pahalgam. Experience the unique blend of natural beauty and cultural heritage in this northernmost region of India.",
-    image: "https://images.pexels.com/photos/9407734/pexels-photo-9407734.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image: "https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg",
     gallery: [
-      "https://images.pexels.com/photos/6602042/pexels-photo-6602042.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      "https://images.pexels.com/photos/6602032/pexels-photo-6602032.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      "https://images.pexels.com/photos/6602034/pexels-photo-6602034.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      "https://images.pexels.com/photos/6602037/pexels-photo-6602037.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      "https://images.pexels.com/photos/4254553/pexels-photo-4254553.jpeg",
+      "https://images.pexels.com/photos/4254555/pexels-photo-4254555.jpeg",
+      "https://images.pexels.com/photos/5208347/pexels-photo-5208347.jpeg",
+      "https://images.pexels.com/photos/2356045/pexels-photo-2356045.jpeg"
     ],
     price: 1799,
     duration: 7,
@@ -210,7 +213,8 @@ export const destinations: Destination[] = [
         title: "Departure",
         description: "Transfer to Srinagar airport for departure."
       }
-    ]
+    ],
+    categories: ["Mountain", "Cultural", "Adventure"]
   },
   {
     id: "ladakh-adventure",
@@ -281,7 +285,8 @@ export const destinations: Destination[] = [
         title: "Departure",
         description: "Transfer to Leh airport for departure."
       }
-    ]
+    ],
+    categories: ["Adventure", "Mountain", "Cultural"]
   },
   {
     id: "uttarakhand-spiritual",
@@ -347,7 +352,8 @@ export const destinations: Destination[] = [
         title: "Departure",
         description: "Transfer to Dehradun airport for departure."
       }
-    ]
+    ],
+    categories: ["Spiritual", "Adventure", "Mountain"]
   },
   {
     id: "assam-wildlife",
@@ -408,7 +414,8 @@ export const destinations: Destination[] = [
         title: "Departure",
         description: "Transfer to Guwahati airport for departure."
       }
-    ]
+    ],
+    categories: ["Wildlife", "Nature", "Cultural"]
   },
   {
     id: "kanyakumari-tour",
@@ -459,7 +466,8 @@ export const destinations: Destination[] = [
         title: "Departure",
         description: "Morning sunrise view before departure."
       }
-    ]
+    ],
+    categories: ["Beach", "Spiritual", "Cultural"]
   },
   {
     id: "darjeeling-sikkim",
@@ -525,7 +533,8 @@ export const destinations: Destination[] = [
         title: "Departure",
         description: "Morning transfer to Bagdogra Airport for your departure flight."
       }
-    ]
+    ],
+    categories: ["Mountain", "Cultural", "Adventure"]
   },
   {
     id: "puri-konark",
@@ -576,7 +585,8 @@ export const destinations: Destination[] = [
         title: "Departure",
         description: "Morning at leisure. Transfer to Bhubaneswar Airport for departure."
       }
-    ]
+    ],
+    categories: ["Heritage", "Spiritual", "Beach"]
   },
   {
     id: "digha-beach",
@@ -617,7 +627,8 @@ export const destinations: Destination[] = [
         title: "Departure",
         description: "Morning at leisure for last-minute shopping. Departure for onward journey."
       }
-    ]
+    ],
+    categories: ["Beach", "Nature", "Weekend Getaway"]
   },
   {
     id: "dubai-discovery",
@@ -673,7 +684,8 @@ export const destinations: Destination[] = [
         title: "Departure",
         description: "Free time for last-minute shopping before transfer to Dubai Airport."
       }
-    ]
+    ],
+    categories: ["Luxury", "Desert", "Shopping"]
   },
   {
     id: "south-africa-safari",
@@ -749,7 +761,8 @@ export const destinations: Destination[] = [
         title: "Departure",
         description: "Transfer to Port Elizabeth Airport for departure flight."
       }
-    ]
+    ],
+    categories: ["Wildlife", "Adventure", "Nature"]
   },
   {
     id: "bali-paradise",
@@ -815,7 +828,8 @@ export const destinations: Destination[] = [
         title: "Departure",
         description: "Free time until transfer to airport for departure flight."
       }
-    ]
+    ],
+    categories: ["Beach", "Cultural", "Honeymoon"]
   },
   {
     id: "maldives-luxury",
@@ -876,7 +890,8 @@ export const destinations: Destination[] = [
         title: "Departure",
         description: "Morning at leisure before seaplane transfer to Male for departure."
       }
-    ]
+    ],
+    categories: ["Luxury", "Beach", "Honeymoon"]
   },
   {
     id: "swiss-alps",
@@ -942,6 +957,16 @@ export const destinations: Destination[] = [
         title: "Departure",
         description: "Return to Zurich for departure flight."
       }
-    ]
+    ],
+    categories: ["Mountain", "Adventure", "Luxury"]
   }
 ];
+
+export const getCategories = (): string[] => {
+  const allCategories = destinations.flatMap(dest => dest.categories);
+  return [...new Set(allCategories)];
+};
+
+export const getDestinationsByCategory = (category: string): Destination[] => {
+  return destinations.filter(dest => dest.categories.includes(category));
+};
