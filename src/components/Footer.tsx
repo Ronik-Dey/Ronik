@@ -56,10 +56,10 @@ const Footer = () => {
                 <Link to="/contact" className="text-gray-400 hover:text-white transition-colors duration-200">Contact</Link>
               </li>
               <li>
-                <Link to="#" className="text-gray-400 hover:text-white transition-colors duration-200">Blog</Link>
+                <Link to="/destinations" className="text-gray-400 hover:text-white transition-colors duration-200">Blog</Link>
               </li>
               <li>
-                <Link to="#" className="text-gray-400 hover:text-white transition-colors duration-200">FAQs</Link>
+                <Link to="/contact" className="text-gray-400 hover:text-white transition-colors duration-200">FAQs</Link>
               </li>
             </ul>
           </div>
@@ -68,22 +68,22 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Popular Destinations</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/destinations/india" className="text-gray-400 hover:text-white transition-colors duration-200">India</Link>
+                <Link to="/destinations/taj-mahal-tour" className="text-gray-400 hover:text-white transition-colors duration-200">India</Link>
               </li>
               <li>
-                <Link to="/destinations/thailand" className="text-gray-400 hover:text-white transition-colors duration-200">Thailand</Link>
+                <Link to="/destinations/bali-paradise" className="text-gray-400 hover:text-white transition-colors duration-200">Thailand</Link>
               </li>
               <li>
-                <Link to="/destinations/japan" className="text-gray-400 hover:text-white transition-colors duration-200">Japan</Link>
+                <Link to="/destinations/bali-paradise" className="text-gray-400 hover:text-white transition-colors duration-200">Japan</Link>
               </li>
               <li>
-                <Link to="/destinations/france" className="text-gray-400 hover:text-white transition-colors duration-200">France</Link>
+                <Link to="/destinations/swiss-alps" className="text-gray-400 hover:text-white transition-colors duration-200">France</Link>
               </li>
               <li>
-                <Link to="/destinations/italy" className="text-gray-400 hover:text-white transition-colors duration-200">Italy</Link>
+                <Link to="/destinations/swiss-alps" className="text-gray-400 hover:text-white transition-colors duration-200">Italy</Link>
               </li>
               <li>
-                <Link to="/destinations/australia" className="text-gray-400 hover:text-white transition-colors duration-200">Australia</Link>
+                <Link to="/destinations/south-africa-safari" className="text-gray-400 hover:text-white transition-colors duration-200">Australia</Link>
               </li>
             </ul>
           </div>
@@ -113,9 +113,9 @@ const Footer = () => {
               &copy; {new Date().getFullYear()} Wanderlust. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <Link to="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">Privacy Policy</Link>
-              <Link to="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">Terms of Service</Link>
-              <Link to="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">Cookie Policy</Link>
+              <Link to="/contact" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">Privacy Policy</Link>
+              <Link to="/contact" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">Terms of Service</Link>
+              <Link to="/contact" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">Cookie Policy</Link>
             </div>
           </div>
         </div>

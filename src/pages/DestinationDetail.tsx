@@ -27,8 +27,10 @@ const DestinationDetail = () => {
   const [travelers, setTravelers] = useState(2);
   const [bookingDate, setBookingDate] = useState('');
   const [isWishlisted, setIsWishlisted] = useState(false);
+  const [isBooked, setIsBooked] = useState(false);
+  const [showCancelModal, setShowCancelModal] = useState(false);
+  const [cancelReason, setCancelReason] = useState('');
   
-  // If destination not found, redirect to destinations page
   useEffect(() => {
     if (!destination) {
       navigate('/destinations');
@@ -64,8 +66,20 @@ const DestinationDetail = () => {
       return;
     }
     
-    // In a real app, this would submit the booking to an API
-    alert(`Booking submitted for ${travelers} travelers on ${bookingDate}`);
+    setIsBooked(true);
+    alert(`Booking confirmed for ${travelers} travelers on ${bookingDate}`);
+  };
+
+  const handleCancelBooking = () => {
+    if (!cancelReason.trim()) {
+      alert('Please provide a reason for cancellation');
+      return;
+    }
+
+    setIsBooked(false);
+    setShowCancelModal(false);
+    setCancelReason('');
+    alert('Your booking has been cancelled successfully');
   };
 
   return (
@@ -328,7 +342,7 @@ const DestinationDetail = () => {
                   </div>
                   
                   <div className="space-y-6">
-                    {/* Sample Reviews - In a real app, these would come from an API */}
+                    {/* Sample Reviews */}
                     <div className="border-b border-gray-200 pb-6">
                       <div className="flex items-center mb-3">
                         <img 
@@ -384,34 +398,6 @@ const DestinationDetail = () => {
                         Overall, we had a fantastic time on this tour. The destinations were beautiful and the local food was delicious. The only reason for 4 stars instead of 5 is that one of our accommodations wasn't quite up to the standard of the others. Would still recommend!
                       </p>
                     </div>
-                    
-                    <div>
-                      <div className="flex items-center mb-3">
-                        <img 
-                          src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                          alt="Reviewer" 
-                          className="w-10 h-10 rounded-full mr-3 object-cover"
-                        />
-                        <div>
-                          <h4 className="font-semibold text-gray-800">David Williams</h4>
-                          <p className="text-gray-500 text-sm">Traveled in January 2025</p>
-                        </div>
-                      </div>
-                      <div className="flex mb-3">
-                        {[...Array(5)].map((_, i) => (
-                          <Star 
-                            key={i} 
-                            size={16} 
-                            className="text-yellow-400 mr-1" 
-                            fill="currentColor"
-                          />
-                        ))}
-                      </div>
-                      <h5 className="font-semibold text-gray-800 mb-2">Unforgettable adventure!</h5>
-                      <p className="text-gray-600">
-                        This was the trip of a lifetime! Every day was filled with new experiences and the guides went above and beyond to make sure we were comfortable and enjoying ourselves. The sights were breathtaking and I came home with amazing memories and photos.
-                      </p>
-                    </div>
                   </div>
                 </div>
               )}
@@ -432,69 +418,86 @@ const DestinationDetail = () => {
                 </div>
               </div>
               
-              <div className="border-t border-gray-200 py-4">
-                <div className="mb-4">
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Number of Travelers
-                  </label>
-                  <div className="flex items-center">
-                    <button
-                      onClick={() => setTravelers(prev => Math.max(1, prev - 1))}
-                      className="px-3 py-1 border border-gray-300 rounded-l-md hover:bg-gray-100"
-                    >
-                      -
-                    </button>
-                    <input
-                      type="number"
-                      min="1"
-                      value={travelers}
-                      onChange={(e) => setTravelers(parseInt(e.target.value) || 1)}
-                      className="w-16 text-center border-t border-b border-gray-300 py-1"
-                    />
-                    <button
-                      onClick={() => setTravelers(prev => prev + 1)}
-                      className="px-3 py-1 border border-gray-300 rounded-r-md hover:bg-gray-100"
-                    >
-                      +
-                    </button>
+              {!isBooked ? (
+                <>
+                  <div className="border-t border-gray-200 py-4">
+                    <div className="mb-4">
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Number of Travelers
+                      </label>
+                      <div className="flex items-center">
+                        <button
+                          onClick={() => setTravelers(prev => Math.max(1, prev - 1))}
+                          className="px-3 py-1 border border-gray-300 rounded-l-md hover:bg-gray-100"
+                        >
+                          -
+                        </button>
+                        <input
+                          type="number"
+                          min="1"
+                          value={travelers}
+                          onChange={(e) => setTravelers(parseInt(e.target.value) || 1)}
+                          className="w-16 text-center border-t border-b border-gray-300 py-1"
+                        />
+                        <button
+                          onClick={() => setTravelers(prev => prev + 1)}
+                          className="px-3 py-1 border border-gray-300 rounded-r-md hover:bg-gray-100"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+                    
+                    <div className="mb-4">
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Tour Date
+                      </label>
+                      <input
+                        type="date"
+                        value={bookingDate}
+                        onChange={(e) => setBookingDate(e.target.value)}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        min={new Date().toISOString().split('T')[0]}
+                      />
+                    </div>
                   </div>
+                  
+                  <div className="border-t border-gray-200 py-4">
+                    <div className="flex justify-between mb-2">
+                      <span className="text-gray-600">Base Price (per person)</span>
+                      <span className="text-gray-800">${destination.price}</span>
+                    </div>
+                    <div className="flex justify-between mb-2">
+                      <span className="text-gray-600">Travelers</span>
+                      <span className="text-gray-800">x {travelers}</span>
+                    </div>
+                    <div className="flex justify-between font-semibold text-lg border-t border-gray-200 pt-2 mt-2">
+                      <span>Total</span>
+                      <span>${destination.price * travelers}</span>
+                    </div>
+                  </div>
+                  
+                  <button
+                    onClick={handleBook}
+                    className="w-full py-3 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition-colors duration-200 mt-4"
+                  >
+                    {user ? 'Book Now' : 'Login to Book'}
+                  </button>
+                </>
+              ) : (
+                <div className="border-t border-gray-200 py-4">
+                  <div className="bg-green-50 text-green-800 p-4 rounded-md mb-4">
+                    <h3 className="font-semibold mb-2">Booking Confirmed!</h3>
+                    <p>Your tour is booked for {bookingDate} with {travelers} travelers.</p>
+                  </div>
+                  <button
+                    onClick={() => setShowCancelModal(true)}
+                    className="w-full py-3 bg-red-600 text-white font-medium rounded-md hover:bg-red-700 transition-colors duration-200"
+                  >
+                    Cancel Booking
+                  </button>
                 </div>
-                
-                <div className="mb-4">
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Tour Date
-                  </label>
-                  <input
-                    type="date"
-                    value={bookingDate}
-                    onChange={(e) => setBookingDate(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    min={new Date().toISOString().split('T')[0]}
-                  />
-                </div>
-              </div>
-              
-              <div className="border-t border-gray-200 py-4">
-                <div className="flex justify-between mb-2">
-                  <span className="text-gray-600">Base Price (per person)</span>
-                  <span className="text-gray-800">${destination.price}</span>
-                </div>
-                <div className="flex justify-between mb-2">
-                  <span className="text-gray-600">Travelers</span>
-                  <span className="text-gray-800">x {travelers}</span>
-                </div>
-                <div className="flex justify-between font-semibold text-lg border-t border-gray-200 pt-2 mt-2">
-                  <span>Total</span>
-                  <span>${destination.price * travelers}</span>
-                </div>
-              </div>
-              
-              <button
-                onClick={handleBook}
-                className="w-full py-3 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition-colors duration-200 mt-4"
-              >
-                {user ? 'Book Now' : 'Login to Book'}
-              </button>
+              )}
               
               <p className="text-gray-500 text-sm text-center mt-4">
                 No payment required now. Reserve your spot today.
@@ -503,6 +506,37 @@ const DestinationDetail = () => {
           </div>
         </div>
       </div>
+
+      {/* Cancel Booking Modal */}
+      {showCancelModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 max-w-md w-full mx-4">
+            <h3 className="text-xl font-bold text-gray-800 mb-4">Cancel Booking</h3>
+            <p className="text-gray-600 mb-4">Please provide a reason for cancellation:</p>
+            <textarea
+              value={cancelReason}
+              onChange={(e) => setCancelReason(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
+              rows={4}
+              placeholder="Enter your reason for cancellation..."
+            ></textarea>
+            <div className="flex justify-end space-x-4">
+              <button
+                onClick={() => setShowCancelModal(false)}
+                className="px-4 py-2 text-gray-600 hover:text-gray-800"
+              >
+                Keep Booking
+              </button>
+              <button
+                onClick={handleCancelBooking}
+                className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700"
+              >
+                Confirm Cancellation
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
