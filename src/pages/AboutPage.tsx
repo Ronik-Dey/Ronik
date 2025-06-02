@@ -180,7 +180,7 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-white rounded-xl overflow-hidden shadow-md transition-transform duration-300 hover:-translate-y-2">
               <img 
-                src="/ronik.jpg" 
+                src="/src/pages/Images/Ronik.jpg.jpeg" 
                 alt="Ronik Dey" 
                 className="w-full h-64 object-cover"
               />
@@ -195,7 +195,7 @@ const AboutPage = () => {
             
             <div className="bg-white rounded-xl overflow-hidden shadow-md transition-transform duration-300 hover:-translate-y-2">
               <img 
-                src="/puskar.jpg" 
+                src="/src/pages/Images/Puskar.jpg.jpeg" 
                 alt="Puskar Jana" 
                 className="w-full h-64 object-cover"
               />
@@ -210,7 +210,7 @@ const AboutPage = () => {
             
             <div className="bg-white rounded-xl overflow-hidden shadow-md transition-transform duration-300 hover:-translate-y-2">
               <img 
-                src="/iman.jpg" 
+                src="/src/pages/Images/Iman.jpg.jpeg" 
                 alt="Iman Das" 
                 className="w-full h-64 object-cover"
               />
@@ -225,7 +225,7 @@ const AboutPage = () => {
             
             <div className="bg-white rounded-xl overflow-hidden shadow-md transition-transform duration-300 hover:-translate-y-2">
               <img 
-                src="/diptorup.jpg" 
+                src="/src/pages/Images/Diptorup.jpg.jpeg" 
                 alt="Diptorup Moshel" 
                 className="w-full h-64 object-cover"
               />
