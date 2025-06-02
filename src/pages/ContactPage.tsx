@@ -229,8 +229,8 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-800 mb-1">Call Us</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
-                    <p className="text-gray-600">+1 (555) 987-6543</p>
+                    <p className="text-gray-600">+91 9587412365</p>
+                    <p className="text-gray-600">+91 8759632147</p>
                   </div>
                 </div>
                 
@@ -241,9 +241,9 @@ const ContactPage = () => {
                   <div>
                     <h3 className="font-semibold text-gray-800 mb-1">Visit Us</h3>
                     <p className="text-gray-600">
-                      123 Travel Street<br />
-                      Wanderlust City, 12345<br />
-                      United States
+                      22, Camac Street<br />
+                      Kolkata, West Bengal 12345<br />
+                      India
                     </p>
                   </div>
                 </div>
