@@ -242,7 +242,7 @@ const ContactPage = () => {
                     <h3 className="font-semibold text-gray-800 mb-1">Visit Us</h3>
                     <p className="text-gray-600">
                       22, Camac Street<br />
-                      Kolkata, West Bengal 12345<br />
+                      Kolkata, West Bengal 700006<br />
                       India
                     </p>
                   </div>
