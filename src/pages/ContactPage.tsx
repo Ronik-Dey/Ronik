@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
+import { Mail, Phone, Clock, Send } from 'lucide-react';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -20,7 +20,6 @@ const ContactPage = () => {
       [name]: value
     }));
     
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -60,7 +59,6 @@ const ContactPage = () => {
     if (validateForm()) {
       setIsSubmitting(true);
       
-      // Simulate API call
       setTimeout(() => {
         setIsSubmitting(false);
         setIsSubmitted(true);
@@ -71,7 +69,6 @@ const ContactPage = () => {
           message: '',
         });
         
-        // Reset success message after 5 seconds
         setTimeout(() => {
           setIsSubmitted(false);
         }, 5000);
@@ -231,20 +228,6 @@ const ContactPage = () => {
                     <h3 className="font-semibold text-gray-800 mb-1">Call Us</h3>
                     <p className="text-gray-600">+91 9587412365</p>
                     <p className="text-gray-600">+91 8759632147</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
-                    <MapPin size={20} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-800 mb-1">Visit Us</h3>
-                    <p className="text-gray-600">
-                      22, Camac Street<br />
-                      Kolkata, West Bengal 700006<br />
-                      India
-                    </p>
                   </div>
                 </div>
                 

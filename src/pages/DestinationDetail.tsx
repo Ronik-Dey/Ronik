@@ -409,7 +409,7 @@ const DestinationDetail = () => {
             <div className="bg-white rounded-lg shadow-md p-6 sticky top-24">
               <div className="mb-4">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-2xl font-bold text-gray-800">${destination.price}</span>
+                  <span className="text-2xl font-bold text-gray-800">₹{destination.price}</span>
                   <span className="text-gray-500">per person</span>
                 </div>
                 <div className="flex items-center text-gray-500 text-sm">
@@ -465,7 +465,7 @@ const DestinationDetail = () => {
                   <div className="border-t border-gray-200 py-4">
                     <div className="flex justify-between mb-2">
                       <span className="text-gray-600">Base Price (per person)</span>
-                      <span className="text-gray-800">${destination.price}</span>
+                      <span className="text-gray-800">₹{destination.price}</span>
                     </div>
                     <div className="flex justify-between mb-2">
                       <span className="text-gray-600">Travelers</span>
@@ -473,7 +473,7 @@ const DestinationDetail = () => {
                     </div>
                     <div className="flex justify-between font-semibold text-lg border-t border-gray-200 pt-2 mt-2">
                       <span>Total</span>
-                      <span>${destination.price * travelers}</span>
+                      <span>₹{destination.price * travelers}</span>
                     </div>
                   </div>
                   
