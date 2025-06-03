@@ -154,7 +154,6 @@ export const destinations: Destination[] = [
     ],
     categories: ["Beach", "Cultural", "Honeymoon"]
   }
-  // ... rest of the destinations with updated prices
 ];
 
 export const getCategories = (): string[] => {
